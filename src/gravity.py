@@ -1,4 +1,5 @@
 import pygame
+# import os
 
 size = width, height = 900, 800
 # x = 2560 + 10
