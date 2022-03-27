@@ -39,7 +39,6 @@ class Moveable:
 
     @property
     def colidded_to_earth(self):
-        print(self.earth_distance)
         return self.radius + earth_size/2 >= self.earth_distance
 
     def update_acceleration(self):

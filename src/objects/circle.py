@@ -15,6 +15,7 @@ class Circle(Moveable):
   def render(self, paused: bool):
     if not paused:
       self.update_position()
+    print("Distance to Earth: ", self.earth_distance)
     pygame.draw.circle(screen, (0, 255, 0),
                    self.position, self.radius)
 
