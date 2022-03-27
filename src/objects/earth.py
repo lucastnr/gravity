@@ -1,17 +1,19 @@
 import pygame, sys
 from src.utils.screen import screen_width, screen_height
 
-if __name__ != "objects.earth":
-    sys.exit()
+from src.utils.physics import earth_proportion_screen
+
 class Earth:
   def __init__(self):
-    size = min(screen_width, screen_height) / 5
+    size = min(screen_width, screen_height) * earth_proportion_screen
     image = pygame.image.load("assets/textures/earth.png")
-    self.__earth = pygame.transform.scale(image, (size, size))
+    self.__surface = pygame.transform.scale(image, (size, size))
 
   @property
-  def earth(self):
-    return self.__earth
+  def surface(self):
+    return self.__surface
+  @property
+  def rect(self):
+    return self.__surface.get_rect()
 
-earth = Earth().earth
-rect = earth.get_rect()
+earth = Earth()
